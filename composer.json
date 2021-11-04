@@ -1,25 +1,25 @@
 {
-    "name": "mnapoli/myproject",
-    "description": "Give it a nice description!",
+    "name": "tuxboy/respector",
+    "description": "Respector is static analyzer gor respect your conception rules.",
     "keywords": [],
     "license": "MIT",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "MyProject\\": "src/"
+            "Respector\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MyProject\\Test\\": "tests/"
+            "Respector\\Test\\": "tests/"
         }
     },
     "require": {
-        "php": ">=7.4"
+        "php": ">=8.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
         "mnapoli/hard-mode": "^0.3.0",
-        "phpstan/phpstan": "^0.12.0"
+        "phpstan/phpstan": "^1.0"
     }
 }
