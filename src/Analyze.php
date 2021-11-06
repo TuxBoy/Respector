@@ -48,8 +48,8 @@ final class Analyze
 
     private function getComposerDependencies(string $namespaceFilter): ?string
     {
-        /** @var string $contentFile */
         $contentFile = file_get_contents($this->composerFilePath);
+        \assert(\is_string($contentFile));
         $composerContentFile = json_decode($contentFile, true);
         if (isset($composerContentFile['autoload']['psr-4'][$namespaceFilter])) {
             return $composerContentFile['autoload']['psr-4'][$namespaceFilter];
@@ -82,8 +82,8 @@ final class Analyze
             foreach ($files as $file) {
                 if ($file === $composerFileName) {
                     $current = $file;
-                    /** @var string $path */
                     $path = realpath($currentDir . DIRECTORY_SEPARATOR . $composerFileName);
+                    \assert(\is_string($path));
                     break;
                 }
             }

@@ -26,7 +26,6 @@ final class ParsedFileCollection implements IteratorAggregate
         })();
     }
 
-
     public function getDataProvider(): Generator
     {
         foreach ($this->items as $key => $item) {
