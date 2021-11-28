@@ -8,7 +8,7 @@ use Respector\Utils\Names;
 
 class ParsedFile
 {
-    public function __construct(private string $path, private string $filename)
+    public function __construct(private string $path, private string $filename, private string $namespace)
     {
         $this->path = str_replace('\\', DIRECTORY_SEPARATOR, $this->path);
         $this->path = str_replace('/', DIRECTORY_SEPARATOR, $this->path);
@@ -34,9 +34,9 @@ class ParsedFile
      */
     public function getClass(): ReflectionClass
     {
-        $classParts = explode('src/', $this->getFullClass());
+        $classParts = explode($this->namespace, $this->getFullClass());
         $pathToClass = end($classParts);
-        $className = Names::pathToClass($pathToClass);
+        $className = Names::pathToClass($this->namespace . $pathToClass);
 
         return new ReflectionClass($className);
     }

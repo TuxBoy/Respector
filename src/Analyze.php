@@ -40,7 +40,7 @@ final class Analyze
             if (in_array($object->getFilename(), ['.', '..'])) {
                 continue;
             }
-            $parsedFileCollection[] = new ParsedFile($object->getPath(), $object->getFilename());
+            $parsedFileCollection[] = new ParsedFile($object->getPath(), $object->getFilename(), $namespace);
         }
 
         return new ParsedFileCollection($parsedFileCollection);

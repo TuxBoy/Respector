@@ -50,8 +50,8 @@ final class AnalyzerTest extends TestCase
         ], iterator_to_array($parsedFileCollection));
     }
 
-    private function makeParsedFile(string $path = '/path/to/', string $filename = 'foo'): ParsedFile
+    private function makeParsedFile(string $path = '/path/to/', string $filename = 'foo', string $namespace = 'Respector\Test\Fake'): ParsedFile
     {
-        return new ParsedFile($path, $filename);
+        return new ParsedFile($path, $filename, $namespace);
     }
 }
