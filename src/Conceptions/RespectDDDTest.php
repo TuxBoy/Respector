@@ -16,11 +16,8 @@ abstract class RespectDDDTest extends BaseConceptionTest
         }
     }
 
-    public function testCountMigrations(): void
-    {
-        $analyzer = Analyze::create('composer.json')
-            ->inNamespace('Infrastructure\\Doctrine\\Migrations');
-
-        $this->assertCount(2, $analyzer);
-    }
+    /**
+     * Domain namespace as analyse
+     */
+    abstract public function domainNamespace(): string;
 }

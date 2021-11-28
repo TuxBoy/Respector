@@ -11,8 +11,8 @@ abstract class BaseConceptionTest extends TestCase
 {
     protected function assertHasNoDependencyTo(string $namespace, ParsedFile $parsedFile): void
     {
-        /** @var string $classContent */
         $classContent = file_get_contents($parsedFile->getFullClass());
+        \assert(\is_string($classContent));
         preg_match_all('/(use).+/', $classContent, $matches);
         if (isset($matches[0])) {
             // Remove "use" word of line
