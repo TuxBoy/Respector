@@ -22,7 +22,7 @@ abstract class BaseConceptionTest extends TestCase
                 foreach ($actual as $value) {
                     $this->assertFalse(
                         str_contains($value, $namespace),
-                        sprintf('The bad dependency with %s in %s class in %s', $namespace, $value, $parsedFile->getClass())
+                        sprintf('The bad dependency with %s in %s class in %s', $namespace, $value, $parsedFile->getClass()->getName())
                     );
                 }
             }
