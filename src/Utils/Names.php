@@ -9,7 +9,7 @@ abstract class Names
      *
      * @example "src/path/to/Class.php" => "Path\To\Class"
      */
-    public static function pathToClass(string $classPath): object
+    public static function pathToClass(string $classPath): string
     {
         $classPath = str_replace('src/', '', $classPath);
         $classPath = str_replace('/', '\\', $classPath);
@@ -18,6 +18,6 @@ abstract class Names
             throw new \Exception(sprintf('The class does not exist with %s path.', $classPath));
         }
 
-        return new $className;
+        return $className;
     }
 }
